@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 
 import {
   Container,
@@ -51,15 +51,15 @@ const Slider: React.FC<slide> = ({ content }) => {
         .fill(0)
         .map((_, index) =>
           index === option ? (
-            <>
+            <Fragment key={index}>
               <ContainerImage>
                 <Image src={content[show.current].img} />
               </ContainerImage>
               <Title>{content[show.current].title}</Title>
               <Description>{content[show.current].description}</Description>
-            </>
+            </Fragment>
           ) : (
-            <div />
+            <div key={index} />
           )
         )}
 
