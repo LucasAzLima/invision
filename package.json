@@ -22,7 +22,8 @@
     "styled-components": "^5.2.0",
     "typeface-open-sans": "^1.1.13",
     "typeface-roboto": "^1.1.13",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "yup": "0.31"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -49,6 +50,7 @@
     "@types/qs": "^6.9.5",
     "@types/react-router-dom": "^5.1.6",
     "@types/styled-components": "^5.1.4",
+    "@types/yup": "^0.29.11",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
     "@typescript-eslint/parser": "^4.4.1",
     "eslint": "^6.6.0",
