@@ -12,6 +12,37 @@ const slide = keyframes`
   }
 `;
 
+const slideImage = keyframes`
+  from {
+    transform: scale(0.97);
+		opacity:0.5;
+  }
+  to {
+    transform: scale(1);
+		opacity: 1;
+  }
+`;
+
+const slideTitle = keyframes`
+  from {
+    transform: translateX(-10px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+`;
+
+const slideDescription = keyframes`
+  from {
+    transform: translateX(10px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+`;
+
 export const Container = Styled(Box)`
 	width:100%;
 	height:100%;
@@ -24,6 +55,7 @@ export const ContainerImage = Styled(Box)`
 	box-sizing: border-box;
 	align-items: center;
 	justify-content: center;
+	animation: ${slideImage} 1s ease forwards;
 `;
 
 export const Title = Styled.h5`
@@ -33,6 +65,7 @@ export const Title = Styled.h5`
 	font-family: 'Mulish', sans-serif;
   font-size: ${Fonts.Sizes.extraLarge};
 	font-weight: bold;
+	animation: ${slideTitle} 1s ease forwards;
 `;
 
 export const Description = Styled.p`
@@ -41,6 +74,8 @@ export const Description = Styled.p`
 	text-align: center;
 	font-family: 'Mulish', sans-serif;
   font-size: ${Fonts.Sizes.medium};
+	animation: ${slideDescription} 1s ease forwards;
+
 `;
 
 export const Image = Styled.img`
@@ -60,7 +95,7 @@ export const OptionActive = Styled.div`
 	border-radius: 50px;
 	background-color: ${Colors.white};
 	margin: 0 5px;
-	animation: ${slide} 0.5s ease forwards;
+	animation: ${slide} 1s ease forwards;
 `;
 
 export const OptionDeactive = Styled.div`

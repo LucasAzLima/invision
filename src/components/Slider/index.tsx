@@ -37,7 +37,7 @@ const Slider: React.FC<slide> = ({ content }) => {
           show.current = 0;
           setOption(0);
         }
-      }, 5000)
+      }, 7000)
     );
     return function clean() {
       clearInterval(loop);
@@ -47,11 +47,22 @@ const Slider: React.FC<slide> = ({ content }) => {
 
   return (
     <Container>
-      <ContainerImage>
-        <Image src={content[show.current].img} />
-      </ContainerImage>
-      <Title>{content[show.current].title}</Title>
-      <Description>{content[show.current].description}</Description>
+      {Array(contentLength)
+        .fill(0)
+        .map((_, index) =>
+          index === option ? (
+            <>
+              <ContainerImage>
+                <Image src={content[show.current].img} />
+              </ContainerImage>
+              <Title>{content[show.current].title}</Title>
+              <Description>{content[show.current].description}</Description>
+            </>
+          ) : (
+            <div />
+          )
+        )}
+
       {/* renderiza de acordo com o estado(posição) do slider */}
       <OptionView>
         {Array(contentLength)
@@ -75,7 +86,7 @@ const Slider: React.FC<slide> = ({ content }) => {
                         show.current = 0;
                         setOption(0);
                       }
-                    }, 3000)
+                    }, 7000)
                   );
                 }}
               />
