@@ -1,20 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { ThemeProvider } from '@material-ui/core';
-import { observer } from 'mobx-react';
 
-import { theme } from 'Theme';
+import SignIn from 'pages/Access/Signin';
+import SignOut from 'pages/Access/Signout';
 
-const App = observer(() => {
+const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={() => <h2>One</h2>} />
-        </Switch>
-      </BrowserRouter>
-    </ThemeProvider>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={SignIn} />
+        <Route path="/signout" component={SignOut} />
+      </Switch>
+    </BrowserRouter>
   );
-});
-
+};
 export default App;

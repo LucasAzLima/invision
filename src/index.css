@@ -140,3 +140,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Ramabhadra";
+  src: url("./assets/fonts/Ramabhadra-Regular.ttf");
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #fbfbfb inset;
+}
