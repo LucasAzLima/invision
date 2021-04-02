@@ -71,6 +71,9 @@ const SIgnOut: React.FC = () => {
             onChange={(e) => setName(e.target.value)}
             error={errors.text ? true : false}
             helperText={errors.text || ''}
+            inputProps={{
+              'data-testid': 'form-name-signout',
+            }}
           ></Input>
           <Input
             type="email"
@@ -79,6 +82,9 @@ const SIgnOut: React.FC = () => {
             onChange={(e) => setEmail(e.target.value)}
             error={errors.email ? true : false}
             helperText={errors.email || ''}
+            inputProps={{
+              'data-testid': 'form-email-signout',
+            }}
           ></Input>
           <Input
             type="password"
@@ -87,9 +93,14 @@ const SIgnOut: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
             error={errors.password ? true : false}
             helperText={errors.password || ''}
+            inputProps={{
+              'data-testid': 'form-pass-signout',
+            }}
           ></Input>
           <Text style={{ textAlign: 'right' }}>Forgot password?</Text>
-          <Button type="submit">Sign up</Button>
+          <Button data-testid="form-button-signout" type="submit">
+            Sign up
+          </Button>
         </Form>
         <Box display="flex" alignItems="center" justifyContent="space-between">
           <Divider style={{ width: '40%' }} />

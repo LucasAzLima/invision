@@ -56,7 +56,7 @@ const SignIn: React.FC = () => {
       <Logo style={{ marginBottom: '10%' }}>Invision</Logo>
       <Box maxWidth="433px" margin="auto">
         <Title style={{ marginBottom: '12%' }}>Welcome to Invision</Title>
-        <Form onSubmit={handleSubmit} noValidate>
+        <Form onSubmit={handleSubmit} noValidate data-testid="form-signin">
           <Input
             type="email"
             label="Users name or Email"
@@ -64,6 +64,9 @@ const SignIn: React.FC = () => {
             onChange={(e) => setEmail(e.target.value)}
             error={errors.email ? true : false}
             helperText={errors.email || ''}
+            inputProps={{
+              'data-testid': 'form-email-signin',
+            }}
           ></Input>
           <Input
             type="password"
@@ -72,9 +75,14 @@ const SignIn: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
             error={errors.password ? true : false}
             helperText={errors.password || ''}
+            inputProps={{
+              'data-testid': 'form-pass-signin',
+            }}
           ></Input>
           <Text style={{ textAlign: 'right' }}>Forgot password?</Text>
-          <Button type="submit">Sign in</Button>
+          <Button type="submit" data-testid="form-button-signin">
+            Sign in
+          </Button>
         </Form>
         <Box display="flex" alignItems="center" justifyContent="space-between">
           <Divider style={{ width: '40%' }} />
